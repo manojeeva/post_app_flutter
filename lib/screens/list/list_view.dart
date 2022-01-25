@@ -44,7 +44,7 @@ class _ListPageState extends State<ListPage> {
           ),
           const SizedBox(height: 10),
           Expanded(
-            child: ValueListenableBuilder<List<TodoModel>>(
+            child: ValueListenableBuilder<List<PostModel>>(
               valueListenable: controller.list,
               builder: (_, value, __) {
                 if (value.isEmpty) {
@@ -91,7 +91,7 @@ class SearchFeedWidget extends StatelessWidget {
 }
 
 class ListItem extends StatelessWidget {
-  final TodoModel model;
+  final PostModel model;
   final VoidCallback onPressFavorite;
   const ListItem({
     Key? key,

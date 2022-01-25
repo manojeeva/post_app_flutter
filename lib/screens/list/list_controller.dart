@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:todo_app/data/models/todo_model.dart';
 
 class ListController {
-  final _fullList = <TodoModel>[
-    TodoModel(
+  final _fullList = <PostModel>[
+    PostModel(
       title: 'Title 1',
       description: "Description about the title 1",
       imagePath: null,
     ),
-    TodoModel(
+    PostModel(
       title: 'Title 2',
       description: "Description about the title 2",
       imagePath: null,
     ),
-    TodoModel(
+    PostModel(
       title: 'Title 3',
       description: "Description about the title 3",
       imagePath: null,
     ),
   ];
-  final list = ValueNotifier(<TodoModel>[]);
+  final list = ValueNotifier(<PostModel>[]);
 
   String searchText = "";
   void onInit() {
@@ -38,7 +38,7 @@ class ListController {
         .toList();
   }
 
-  void onSaveNewItem(TodoModel model) {
+  void onSaveNewItem(PostModel model) {
     _fullList.insert(0, model);
     onChangeSearchInput(searchText);
   }

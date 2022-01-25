@@ -4,7 +4,7 @@ import 'package:todo_app/screens/add/add_controller.dart';
 import 'package:todo_app/widgets/input.dart';
 
 class AddPage extends StatefulWidget {
-  final ValueChanged<TodoModel> onSave;
+  final ValueChanged<PostModel> onSave;
   const AddPage({
     Key? key,
     required this.onSave,
@@ -38,7 +38,7 @@ class _AddPageState extends State<AddPage> {
           ),
           ElevatedButton(
             onPressed: () {
-              widget.onSave(TodoModel(
+              widget.onSave(PostModel(
                 description: controller.description,
                 title: controller.title,
                 imagePath: null,
