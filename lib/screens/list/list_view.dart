@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:todo_app/data/models/todo_model.dart';
-import 'package:todo_app/screens/add/add_view.dart';
-import 'package:todo_app/screens/list/list_controller.dart';
+
+import '../../data/models/todo_model.dart';
+import '../add/add_view.dart';
+import 'list_controller.dart';
 
 class ListPage extends StatefulWidget {
   const ListPage({Key? key}) : super(key: key);

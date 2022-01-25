@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:todo_app/data/models/todo_model.dart';
-import 'package:todo_app/screens/add/add_controller.dart';
-import 'package:todo_app/widgets/input.dart';
+import '../../data/models/todo_model.dart';
+import 'add_controller.dart';
+import '../../widgets/input.dart';
 
 class AddPage extends StatefulWidget {
   final ValueChanged<PostModel> onSave;

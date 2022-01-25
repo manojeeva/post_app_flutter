@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_app/data/models/todo_model.dart';
+import '../../data/models/todo_model.dart';
 
 class ListController {
   final _fullList = <PostModel>[
