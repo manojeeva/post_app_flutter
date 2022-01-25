@@ -21,13 +21,25 @@ class ListController {
   ];
   final list = ValueNotifier(<TodoModel>[]);
 
+  String searchText = "";
   void onInit() {
     list.value.addAll(_fullList);
   }
 
   void onChangeSearchInput(String value) {
     list.value.clear();
-    list.value.addAll(_fullList.where((item) =>
-        item.title.contains(value) || item.description.contains(value)));
+    searchText = value;
+    if (value.isEmpty) {
+      list.value = List.from(_fullList);
+    }
+    list.value = _fullList
+        .where((item) =>
+            item.title.contains(value) || item.description.contains(value))
+        .toList();
+  }
+
+  void onSaveNewItem(TodoModel model) {
+    _fullList.insert(0, model);
+    onChangeSearchInput(searchText);
   }
 }

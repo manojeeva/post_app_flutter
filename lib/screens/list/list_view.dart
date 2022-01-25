@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/data/models/todo_model.dart';
+import 'package:todo_app/screens/add/add_view.dart';
 import 'package:todo_app/screens/list/list_controller.dart';
 
 class ListPage extends StatefulWidget {
@@ -18,6 +19,12 @@ class _ListPageState extends State<ListPage> {
     super.initState();
   }
 
+  void onPressAdd() {
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+      return AddPage(onSave: controller.onSaveNewItem);
+    }));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +33,7 @@ class _ListPageState extends State<ListPage> {
         centerTitle: true,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: onPressAdd,
         child: const Icon(Icons.add),
       ),
       body: Column(
@@ -118,7 +125,7 @@ class ListItem extends StatelessWidget {
             style: textTheme.bodyText1,
           ),
           const SizedBox(height: 5),
-          AspectRatio(aspectRatio: 2 / 1, child: Placeholder()),
+          const AspectRatio(aspectRatio: 2 / 1, child: Placeholder()),
           // AspectRatio(
           //   aspectRatio: 1 / 2,
           //   child: Image.file(model.imagePath),
